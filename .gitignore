@@ -52,3 +52,9 @@ CodeCoverage/
 *.VisualState.xml
 TestResult.xml
 nunit-*.xml
+
+# Sensitive Data
+appsettings.Development.json
+appsettings.json
+.idea/.idea.Presentation/.idea/dataSources.xml
+.idea/.idea.Presentation/.idea/sqldialects.xml
