@@ -1,7 +1,7 @@
 using System.Net;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Forge.Helpers;
+namespace VoidMail.Helpers;
 
 /// <summary>
 /// Centralized API response handler following REST standards

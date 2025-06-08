@@ -1,7 +1,4 @@
-using Core.Factories.Data;
-using Core.Factories.DTO;
 using Core.Interfaces;
-using Core.Interfaces.Factories;
 using Core.Services;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -19,12 +16,7 @@ public static class DependencyInjection
     public static IServiceCollection AddCoreServices(this IServiceCollection services)
     {
         // Register services
-        services.AddScoped<IRepositoryResultFactory, RepositoryResultFactory>();
-        services.AddScoped<IEventService, EventService>();
-
-        // Register factories
-        services.AddScoped<IEventDtoFactory, EventDtoFactory>();
-        services.AddScoped<IEventPackageFactory, EventPackageDtoFactory>();
+        services.AddScoped<IMailService, MailService>();
 
         // Returning the services so it could be used
         // in our API layer where we are registering the services

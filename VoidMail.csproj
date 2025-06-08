@@ -13,6 +13,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="9.0.5" />
     <PackageReference Include="Scalar.AspNetCore" Version="2.4.8" />
     <PackageReference Include="Scalar.AspNetCore.Swashbuckle" Version="2.4.8" />
     <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="8.1.3" />

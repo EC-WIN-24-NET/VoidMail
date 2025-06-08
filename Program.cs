@@ -1,9 +1,6 @@
 using System.Reflection;
 using Azure.Identity;
 using Core;
-using Forge.Helpers;
-using Forge.Interface;
-using Infrastructure;
 using Microsoft.OpenApi.Models;
 using Scalar.AspNetCore;
 
@@ -11,9 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllers();
-builder.Services.AddScoped<ICommonHelpers, CommonHelpers>();
-
-
+builder.Services.AddCoreServices();
 
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
@@ -36,11 +31,6 @@ else
 
 // --- End of Azure Key Vault configuration ---
 
-var connectionString = builder.Configuration.GetConnectionString("SQLServerAzure");
-
-// Time to register our Core Services and Infrastructure
-builder.Services.AddCoreServices().AddInfrastructure(connectionString!);
-
 // https://learn.microsoft.com/en-us/aspnet/core/tutorials/getting-started-with-swashbuckle?view=aspnetcore-8.0&tabs=visual-studio
 builder.Services.AddSwaggerGen(c =>
 {
@@ -49,9 +39,9 @@ builder.Services.AddSwaggerGen(c =>
         "v1",
         new OpenApiInfo
         {
-            Title = "Forge API",
+            Title = "VoidMail API",
             Version = "v1",
-            Description = "A simple API for managing events and packages.",
+            Description = "An simple API for Email sending",
             Contact = new OpenApiContact()
             {
                 Name = "Georgi Sundberg",

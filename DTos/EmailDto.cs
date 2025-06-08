@@ -2,6 +2,13 @@ using System.ComponentModel.DataAnnotations;
 
 namespace VoidMail.DTos;
 
+/// <summary>
+/// Represents the data transfer object for an email message.
+/// This class includes properties for the recipient's email address,
+/// the email subject, the HTML body, and an optional plain text body.
+/// It also includes validation attributes to ensure the data integrity.
+/// </summary>
+/// <example>Hello! This is a test email.</example>
 public class EmailDto
 {
     /// <summary>
@@ -17,7 +24,11 @@ public class EmailDto
     /// </summary>
     /// <example>Meeting Reminder</example>
     [Required(ErrorMessage = "Email subject is required.")]
-    [StringLength(255, MinimumLength = 1, ErrorMessage = "Subject must be between 1 and 255 characters.")]
+    [StringLength(
+        255,
+        MinimumLength = 1,
+        ErrorMessage = "Subject must be between 1 and 255 characters."
+    )]
     public string Subject { get; set; } = string.Empty;
 
     /// <summary>

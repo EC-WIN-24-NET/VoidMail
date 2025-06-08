@@ -1,8 +1,11 @@
-
-
 namespace Core.Interfaces;
 
-public interface IEventService
+public interface IMailService
 {
-Task<bool> SendEmailEventAsync(string recipientEmail, string subject, string htmlBody, string? plainTextBody);
+    Task<bool> SendEmailEventAsync(
+        string recipientEmail,
+        string subject,
+        string htmlBody,
+        string? plainTextBody
+    );
 }
